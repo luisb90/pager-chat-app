@@ -19,3 +19,7 @@ Below the rules for the loaders, I instantiate the CleanWebpackPlugin, HtmlWebpa
 ## 3. Scaffolding the React app
 
 To setup the react application, I set up the index.js and index.html file. I created a simple placeholder App.js, which in index.js i bootstrapped to the root "container" dom node using ReactDOM.render. I wrapped the App component in React.StrictMode to enable useful developer error checks like unsafe lifecycle methods and deprecated methods. I also added a simple favicon to the app.
+
+## 4. Setting up the login page
+
+The login page is simple enough. Although this app won't benefit as much from it as a larger app would, I created reusable UI components for the button and input. That way, I only have to style buttons and inputs in one place. There's only one button in the app, but the input I'll be able to reuse in the main chat page for message input. For now, I'm keeping the value from the username input as state of the login page. This will be moved to a global context as I start to implement the main chat page. I'm using css modules to scope styling to their respective components. I setup the Input with a forwardRef, and use this to set focus to the username input automatically on page load. Lastly, I'm using rem units for font sizes and paddings/margins, So that the app can easily scale if font size is changed.

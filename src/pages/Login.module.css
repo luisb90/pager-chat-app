@@ -1,0 +1,30 @@
+.Login {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.Prompt {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  padding: 2.5rem;
+  box-sizing: border-box;
+  border: 1px solid #d6d6d6;
+  border-radius: 7px;
+  box-shadow: 0 0 2px #d6d6d6;
+}
+
+.Prompt .Header {
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.Prompt input {
+  margin-bottom: 2.5rem;
+}
+
+.Prompt button {
+  align-self: flex-end;
+}

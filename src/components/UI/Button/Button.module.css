@@ -1,0 +1,15 @@
+.Button {
+  padding: 0.75rem 2.1875rem;
+  font-size: 0.875rem;
+  font-weight: bold;
+  color: white;
+  background-color: #ff8203;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.Button:active,
+.Button:hover {
+  filter: brightness(110%);
+}

@@ -1,0 +1,16 @@
+.Label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+
+.Input {
+  display: block;
+  width: stretch;
+  font-size: 0.875rem;
+  height: 2.5rem;
+  padding: 0 0.625rem;
+  border: 1px solid #d6d6d6;
+  border-radius: 10px;
+}
