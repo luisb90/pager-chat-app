@@ -6,8 +6,8 @@
 }
 
 .Input {
-  display: block;
-  width: stretch;
+  box-sizing: border-box;
+  width: 100%;
   font-size: 0.875rem;
   height: 2.5rem;
   padding: 0 0.625rem;
