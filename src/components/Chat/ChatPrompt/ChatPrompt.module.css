@@ -1,0 +1,27 @@
+.ChatPrompt {
+  display: flex;
+  height: 80%;
+  flex-direction: column;
+  width: 600px;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+  border: 1px solid #d6d6d6;
+  border-radius: 7px;
+  box-shadow: 0 0 3px #d6d6d6;
+}
+
+.ChatPrompt .ChatContainer {
+  flex: 90%;
+  overflow-y: auto;
+}
+
+.ChatPrompt .InputContainer {
+  margin-top: 1.5rem;
+  flex: 10%;
+}
+
+.ChatPrompt .InputContainer .Typing {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: #727272;
+}

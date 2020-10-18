@@ -11,6 +11,10 @@ module.exports = {
   },
   devtool: 'inline-source-map',
   devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    compress: true,
+    port: 5000,
+    hot: true,
     historyApiFallback: true,
   },
   module: {

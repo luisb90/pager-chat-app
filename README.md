@@ -27,3 +27,7 @@ The login page is simple enough. Although this app won't benefit as much from it
 ## 5. Scaffolding the main chat page
 
 To get ready for the chat page, I refactored the top level App component. I installed the React Router library, and set up A Switch. I set up two specific routes, "/login" and "/chat". A Redirect from the path "/" will reroute to login if no username has been entered, and chat otherwise. Lastly, I set up a "Not Found" Route for all other routes that renders a custom component with a button to route back to a defined page. I also used the Suspense component along with React.lazy to setup lazy loading for the login and chat pages. Finally, I moved up the username state from the login component to the app component, so that it can be shared with the chat component as well.
+
+## 6. Styling the chat page with mock data
+
+Before I hook up the socket.io client server for the chat page, I wanted to setup all of the styling. I used mock data with message objects matching the properties im expecting from the server. I created a ChatPrompt component for the chatbox container, and within that a ChatMessage component that will hold each message with the avatar, username, time sent, and message text. I hooked up the avatar to fetch from ui-avatars.com, setting up the size of the image itself to be twice the wireframe's 80px, twice the requirement of the wireframe, as per the site's suggestion to have crisp avatars. I also refactored the input component so that it can take dynamic content, to add the send button to the chat input.

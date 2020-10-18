@@ -1,0 +1,32 @@
+.ChatMessage {
+  display: flex;
+  margin-top: 1.5rem;
+}
+
+.ChatMessage .Avatar {
+  margin-right: 0.625rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 7px;
+  overflow: hidden;
+}
+
+.ChatMessage .Avatar img {
+  width: 100%;
+  height: 100%;
+}
+
+.ChatMessage .Username {
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+
+.ChatMessage .Time {
+  font-size: 0.75rem;
+  color: #969696;
+}
+
+.ChatMessage .Text {
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}

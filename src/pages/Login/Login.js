@@ -1,25 +1,25 @@
 import React, { useState } from 'react';
 
-import Prompt from '../../components/Login/Prompt';
+import LoginPrompt from '../../components/LoginPrompt/LoginPrompt';
 
 import styles from './Login.module.css';
 
 const Login = props => {
-  const [userName, setUserName] = useState('');
+  const [username, setUsername] = useState('');
 
   const handleInput = ev => {
-    setUserName(ev.target.value);
+    setUsername(ev.target.value);
   };
 
   const handleNextClick = () => {
-    props.onNextClicked(userName);
+    props.onNextClicked(username);
     props.history.push('/chat');
     return;
   };
 
   return (
     <div className={styles.Login}>
-      <Prompt userName={userName} onInput={handleInput} onNextClick={handleNextClick} />
+      <LoginPrompt username={username} onInput={handleInput} onNextClick={handleNextClick} />
     </div>
   );
 };

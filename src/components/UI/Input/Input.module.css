@@ -6,11 +6,26 @@
 }
 
 .Input {
-  box-sizing: border-box;
+  border: none;
+  outline: none;
   width: 100%;
+  height: 100%;
   font-size: 0.875rem;
-  height: 2.5rem;
-  padding: 0 0.625rem;
+}
+
+.Container {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0.625rem 0.75rem;
   border: 1px solid #d6d6d6;
-  border-radius: 10px;
+  border-radius: 7px;
+}
+
+.Container .InputEl {
+  flex: 1;
+}
+
+.Container .InputContent {
+  margin-left: auto;
 }

@@ -1,0 +1,7 @@
+.LinkButton {
+  font-size: 0.875rem;
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+}

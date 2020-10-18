@@ -5,6 +5,7 @@
   color: white;
   background-color: #ff8203;
   border: none;
+  outline: none;
   border-radius: 5px;
   cursor: pointer;
 }

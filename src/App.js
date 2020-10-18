@@ -8,27 +8,25 @@ const Chat = lazy(() => import('./pages/Chat/Chat'));
 const NotFound = lazy(() => import('./pages/NotFound/NotFound'));
 
 const App = () => {
-  const [selectedUserName, setSelectedUserName] = useState('');
+  const [selectedUsername, setSelectedUsername] = useState('');
 
   return (
     <Router>
       <div className={styles.App}>
         <Suspense fallback={<div>Loading...</div>}>
           <Switch>
-            <Redirect exact from="/" to={selectedUserName ? '/chat' : '/login'} />
+            <Redirect exact from="/" to={selectedUsername ? '/chat' : '/login'} />
             <Route
               path="/login"
               exact
-              render={routerProps => <Login {...routerProps} onNextClicked={setSelectedUserName} />}
+              render={routerProps => <Login {...routerProps} onNextClicked={setSelectedUsername} />}
             />
             <Route
               path="/chat"
               exact
-              render={routerProps => <Chat {...routerProps} userName={selectedUserName} />}
+              render={routerProps => <Chat {...routerProps} username={selectedUsername} />}
             />
-            <Route
-              render={routerProps => <NotFound {...routerProps} userName={selectedUserName} />}
-            />
+            <Route component={NotFound} />
           </Switch>
         </Suspense>
       </div>
