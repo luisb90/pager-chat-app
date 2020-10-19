@@ -10,7 +10,12 @@
   cursor: pointer;
 }
 
-.Button:active,
-.Button:hover {
+.Button:not(:disabled):active,
+.Button:not(:disabled):hover {
   filter: brightness(110%);
+}
+
+.Button:disabled {
+  opacity: 0.5;
+  pointer-events: none;
 }

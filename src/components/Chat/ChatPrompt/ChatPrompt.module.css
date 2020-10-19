@@ -11,17 +11,26 @@
 }
 
 .ChatPrompt .ChatContainer {
-  flex: 90%;
+  flex: 1;
   overflow-y: auto;
 }
 
 .ChatPrompt .InputContainer {
+  position: relative;
   margin-top: 1.5rem;
-  flex: 10%;
+  margin-bottom: 1.875rem;
+  justify-self: flex-end;
+}
+
+.ChatPrompt .InputContainer .GifHint {
+  margin-bottom: 0.25rem;
+  font-size: 0.625rem;
+  color: #727272;
 }
 
 .ChatPrompt .InputContainer .Typing {
-  margin-top: 0.5rem;
+  position: absolute;
+  bottom: -1.375rem;
   font-size: 0.75rem;
   color: #727272;
 }

@@ -12,6 +12,12 @@ const LoginPrompt = props => {
     inputRef.current.focus();
   }, []);
 
+  const handleKeyPress = event => {
+    if (event.key === 'Enter' && inputRef.current.value.trim()) {
+      props.onNextClick();
+    }
+  };
+
   return (
     <div className={styles.LoginPrompt}>
       <div className={styles.Header}>Join chat</div>
@@ -21,9 +27,12 @@ const LoginPrompt = props => {
           label="Please enter your username"
           value={props.username}
           onChange={props.onInput}
+          onKeyPress={handleKeyPress}
         />
       </div>
-      <Button onClick={props.onNextClick}>Next</Button>
+      <Button onClick={props.onNextClick} disabled={!inputRef.current?.value.trim()}>
+        Next
+      </Button>
     </div>
   );
 };

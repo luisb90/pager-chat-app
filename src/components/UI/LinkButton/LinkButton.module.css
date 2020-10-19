@@ -5,3 +5,8 @@
   background: transparent;
   cursor: pointer;
 }
+
+.LinkButton:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}

@@ -17,6 +17,10 @@ class ChatSocketService {
     socket.emit('text-message', message);
   }
 
+  sendImageMessage(image) {
+    socket.emit('image-message', { url: image });
+  }
+
   setTypingStatus(status) {
     socket.emit('typing', status);
   }

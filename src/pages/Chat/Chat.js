@@ -53,20 +53,21 @@ const Chat = props => {
     setMessages(prev => {
       const lastMessage = prev[prev.length - 1];
       const formattedTime = Utils.getTimeFromDate(message.time);
+      const content = message.type === 'text' ? message.text : message.url;
       let newMessages;
 
       // if the current message was sent by the current user and at the same minute as the last, we append it to the last
       // ChatMessage instead of creating a new one. This keeps messages grouped and causes less clutter.
       if (lastMessage?.username === message.username && lastMessage.time === formattedTime) {
-        newMessages = [...prev.map(m => ({ ...m, text: [...m.text] }))];
-        newMessages[newMessages.length - 1].text.push(message.text);
+        newMessages = [...prev.map(m => ({ ...m, values: [...m.values] }))];
+        newMessages[newMessages.length - 1].values.push({ type: message.type, content });
       } else {
         const newMessage = {
           id: cuid(),
           username: message.username,
           type: message.type,
           time: formattedTime,
-          text: [message.text],
+          values: [{ type: message.type, content }],
         };
 
         newMessages = [...prev, newMessage];
@@ -76,8 +77,12 @@ const Chat = props => {
     });
   };
 
-  const handleSendMessage = textMessage => {
+  const handleSendTextMessage = textMessage => {
     socketService.sendTextMessage(textMessage);
+  };
+
+  const handleSendImageMessage = image => {
+    socketService.sendImageMessage(image);
   };
 
   const handleTyping = () => {
@@ -97,7 +102,8 @@ const Chat = props => {
       <ChatPrompt
         messages={messages}
         typers={typers}
-        onSendMessage={handleSendMessage}
+        onSendTextMessage={handleSendTextMessage}
+        onSendImageMessage={handleSendImageMessage}
         onTyping={handleTyping}
       />
     </div>

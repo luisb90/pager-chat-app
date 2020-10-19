@@ -17,11 +17,17 @@ const ChatMessage = ({ msg }) => {
           <span className={styles.Username}>{msg.username}</span>{' '}
           <span className={styles.Time}>{msg.time}</span>
         </div>
-        {msg.text.map((text, i) => (
-          <div key={i} className={styles.Text}>
-            {text}
-          </div>
-        ))}
+        {msg.values.map((val, i) => {
+          return val.type === 'text' ? (
+            <div key={i} className={styles.Text}>
+              {val.content}
+            </div>
+          ) : (
+            <div key={i} className={styles.Image}>
+              <img src={val.content} />
+            </div>
+          );
+        })}
       </div>
     </div>
   );
