@@ -1,7 +1,7 @@
 .LoginPrompt {
   display: flex;
   flex-direction: column;
-  width: 600px;
+  width: 37.5rem;
   padding: 2.5rem;
   box-sizing: border-box;
   border: 1px solid #d6d6d6;
