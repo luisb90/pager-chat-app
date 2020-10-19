@@ -40,6 +40,7 @@ module.exports = {
             loader: 'css-loader',
             options: {
               modules: {
+                auto: /\.module\.\w+$/i,
                 localIdentName: '[local]___[hash:base64:8]',
               },
               sourceMap: isDevelopment,

@@ -1,8 +1,6 @@
 import React, { Suspense, lazy, useState } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 
-import styles from './App.module.css';
-
 const Login = lazy(() => import('./pages/Login/Login'));
 const Chat = lazy(() => import('./pages/Chat/Chat'));
 const NotFound = lazy(() => import('./pages/NotFound/NotFound'));
@@ -12,7 +10,7 @@ const App = () => {
 
   return (
     <Router>
-      <div className={styles.App}>
+      <div>
         <Suspense fallback={<div>Loading...</div>}>
           <Switch>
             <Redirect exact from="/" to={selectedUsername ? '/chat' : '/login'} />
