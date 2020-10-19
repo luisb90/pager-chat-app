@@ -16,8 +16,8 @@ html {
   height: -webkit-fill-available;
 }
 
-@media screen and (min-width: 2000px) {
+@media screen and (max-width: 767px) {
   html {
-    font-size: 18px;
+    font-size: 19px;
   }
 }
