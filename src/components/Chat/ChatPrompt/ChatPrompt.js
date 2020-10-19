@@ -51,6 +51,7 @@ const ChatPrompt = props => {
     }
 
     inputRef.current.value = '';
+    inputRef.current.focus();
   };
 
   const inputContent = (
