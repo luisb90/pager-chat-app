@@ -30,6 +30,13 @@ const ChatPrompt = props => {
     messagesEndRef.current.scrollIntoView();
   }, [props.messages]);
 
+  let typing;
+  if (props.typers.length) {
+    const msg =
+      props.typers.length > 1 ? 'People are typing...' : `${props.typers[0]} is typing...`;
+    typing = <div className={styles.Typing}>{msg}</div>;
+  }
+
   return (
     <div className={styles.ChatPrompt}>
       <div className={styles.ChatContainer}>
@@ -39,8 +46,13 @@ const ChatPrompt = props => {
         <div ref={messagesEndRef} />
       </div>
       <div className={styles.InputContainer}>
-        <Input ref={inputRef} inputcontent={inputContent} color={inputColor} />
-        <div className={styles.Typing}>Pam is typing...</div>
+        <Input
+          ref={inputRef}
+          inputcontent={inputContent}
+          onChange={props.onTyping}
+          color={inputColor}
+        />
+        {typing}
       </div>
     </div>
   );

@@ -17,6 +17,10 @@ class ChatSocketService {
     socket.emit('text-message', message);
   }
 
+  setTypingStatus(status) {
+    socket.emit('typing', status);
+  }
+
   disconnect() {
     socket.disconnect();
   }
