@@ -16,7 +16,7 @@ html {
   height: -webkit-fill-available;
 }
 
-@media screen and (max-width: 767px) {
+@media (pointer: coarse) and (hover: none) {
   html {
     font-size: 19px;
   }
