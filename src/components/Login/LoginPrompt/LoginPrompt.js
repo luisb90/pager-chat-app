@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 
-import Button from '../UI/Button/Button';
-import Input from '../UI/Input/Input';
+import Button from '../../UI/Button/Button';
+import Input from '../../UI/Input/Input';
 
 import styles from './LoginPrompt.module.css';
 

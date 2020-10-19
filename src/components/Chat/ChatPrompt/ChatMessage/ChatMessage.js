@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useState } from 'react';
+import React, { memo } from 'react';
 
 import styles from './ChatMessage.module.css';
 
@@ -6,12 +6,6 @@ const ChatMessage = ({ msg }) => {
   const avatarSrc = `https://ui-avatars.com/api/?name=${encodeURIComponent(
     msg.username
   )}&size=80&background=EEEEEE&font-size=0.35&bold=true`;
-
-  const formattedTime = msg.time.toLocaleString('en-US', {
-    hour: 'numeric',
-    minute: 'numeric',
-    hour12: true,
-  });
 
   return (
     <div className={styles.ChatMessage}>
@@ -21,9 +15,13 @@ const ChatMessage = ({ msg }) => {
       <div>
         <div>
           <span className={styles.Username}>{msg.username}</span>{' '}
-          <span className={styles.Time}>{formattedTime}</span>
+          <span className={styles.Time}>{msg.time}</span>
         </div>
-        <div className={styles.Text}>{msg.text}</div>
+        {msg.text.map((text, i) => (
+          <div key={i} className={styles.Text}>
+            {text}
+          </div>
+        ))}
       </div>
     </div>
   );

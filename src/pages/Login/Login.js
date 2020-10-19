@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import LoginPrompt from '../../components/LoginPrompt/LoginPrompt';
+import LoginPrompt from '../../components/Login/LoginPrompt/LoginPrompt';
 
 import styles from './Login.module.css';
 
