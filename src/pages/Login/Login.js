@@ -14,7 +14,6 @@ const Login = props => {
   const handleNextClick = () => {
     props.onNextClicked(username);
     props.history.push('/chat');
-    return;
   };
 
   return (

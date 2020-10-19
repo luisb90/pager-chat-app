@@ -32,12 +32,15 @@ const ChatPrompt = props => {
     // if the message value started with "/gif ", we assume it's an image message and call out to the giphy API.
     if (valSplit.length > 1) {
       fetch(
-        `https://api.giphy.com/v1/gifs/search?api_key=4mRTNgnjJ17oxDULcwFEcTj8oAxpO2CM&q=${valSplit[1]}`
+        `https://api.giphy.com/v1/gifs/search?api_key=4mRTNgnjJ17oxDULcwFEcTj8oAxpO2CM&q=${encodeURIComponent(
+          valSplit[1]
+        )}`
       )
         .then(res => res.json())
         .then(gifs => {
           const dataLen = gifs.data.length - 1;
 
+          // giphy returns up to 50 gif results, choosing one at random.
           const randomGif = gifs.data[Math.floor(Math.random() * dataLen)];
           if (randomGif) {
             props.onSendImageMessage(randomGif.images.downsized.url);

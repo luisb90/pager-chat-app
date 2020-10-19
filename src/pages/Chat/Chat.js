@@ -87,6 +87,9 @@ const Chat = props => {
 
   const handleTyping = () => {
     socketService.setTypingStatus(true);
+
+    // If we have an active timeout, clear it to prep for the new one below. This way the typing status
+    // will only clear if they're done typing, avoiding flickers.
     if (timeout) {
       clearTimeout(timeout);
       timeout = null;
