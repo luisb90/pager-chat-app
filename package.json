@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "start": "webpack serve",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production && cp _redirects dist/_redirects"
   },
   "dependencies": {
     "cuid": "^2.1.8",
