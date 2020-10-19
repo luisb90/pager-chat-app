@@ -10,11 +10,6 @@ const ChatPrompt = props => {
   const inputRef = useRef();
   const messagesEndRef = useRef();
   const inputColor = '#CACACA';
-  const inputContent = (
-    <LinkButton color={inputColor} onClick={handleEnter} disabled={!inputRef.current?.value.trim()}>
-      Send
-    </LinkButton>
-  );
 
   useEffect(() => {
     inputRef.current.focus();
@@ -54,6 +49,12 @@ const ChatPrompt = props => {
 
     inputRef.current.value = '';
   };
+
+  const inputContent = (
+    <LinkButton color={inputColor} onClick={handleEnter} disabled={!inputRef.current?.value.trim()}>
+      Send
+    </LinkButton>
+  );
 
   let typing;
   if (props.typers.length) {

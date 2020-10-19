@@ -4,20 +4,9 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+html,
 body,
 #container,
 #container > div {
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
-  height: -webkit-fill-available;
-}
-
-html {
-  height: -webkit-fill-available;
-}
-
-@media (pointer: coarse) and (hover: none) {
-  html {
-    font-size: 19px;
-  }
+  height: 100vh;
 }

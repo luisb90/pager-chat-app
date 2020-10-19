@@ -40,6 +40,6 @@ I installed the "socket.io-client" package, and created a chat socket service to
 
 To add giphy support, I got an api key from the giphy site and set up a fetch query to their search endpoint. To know when the user is requesting a gif, on enter I split the message value on "/gif ". if the split has more than one value, we assume the user wants a gif and call out to the giphy API. Giphy returns up to 50 gif results based on the entered query, I choose one at random and send it to socket as an image message. If the split has just 1 value, we assume it's a regular text message and send it along as such. While doing this I took the time to enhance the inputs and buttons in the app to give the buttons a disabled state and the inputs the ability to submit on enter key press.
 
-## Deploying the app and optimizing for mobile
+## 9. Deploying the app
 
 I chose to deploy to Netlify which made it super easy. I just had to create a "\_redirects" file telling Netlify to redirect all routes to index.html, for client side routing. I then update the build command to copy that file into the dist folder after build, and Netlify handles the rest.
